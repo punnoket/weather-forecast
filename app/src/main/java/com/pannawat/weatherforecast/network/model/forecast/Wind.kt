@@ -1,4 +1,4 @@
-package com.pannawat.weatherforecast.model.weather
+package com.pannawat.weatherforecast.network.model.forecast
 
 
 import com.squareup.moshi.Json
@@ -10,9 +10,11 @@ import android.os.Parcelable
 @Keep
 @JsonClass(generateAdapter = true)
 @Parcelize
-data class Coord(
-    @Json(name = "lat")
-    val lat: Double = 0.0,
-    @Json(name = "lon")
-    val lon: Double = 0.0
+data class Wind(
+    @Json(name = "deg")
+    val deg: Int = 0,
+    @Json(name = "gust")
+    val gust: Double = 0.0,
+    @Json(name = "speed")
+    val speed: Double = 0.0
 ) : Parcelable

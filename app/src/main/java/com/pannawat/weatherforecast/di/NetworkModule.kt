@@ -1,8 +1,8 @@
 package com.pannawat.weatherforecast.di
 
 import com.pannawat.weatherforecast.BuildConfig
-import com.pannawat.weatherforecast.SchedulersProvider
-import com.pannawat.weatherforecast.network.AppNetworkingProvider
+import com.pannawat.weatherforecast.provider.SchedulersProvider
+import com.pannawat.weatherforecast.provider.AppNetworkingProvider
 import com.serjltt.moshi.adapters.DeserializeOnly
 import com.serjltt.moshi.adapters.SerializeOnly
 import com.squareup.moshi.Moshi

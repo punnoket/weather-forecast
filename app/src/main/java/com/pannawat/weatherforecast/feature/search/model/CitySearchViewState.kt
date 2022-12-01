@@ -1,8 +1,8 @@
-package com.pannawat.weatherforecast.search.model
+package com.pannawat.weatherforecast.feature.search.model
 
 import android.os.Parcelable
 import com.pannawat.weatherforecast.constant.UnitEnum
-import com.pannawat.weatherforecast.model.weather.WeatherResponse
+import com.pannawat.weatherforecast.network.model.weather.WeatherResponse
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

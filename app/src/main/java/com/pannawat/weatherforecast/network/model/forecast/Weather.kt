@@ -1,4 +1,4 @@
-package com.pannawat.weatherforecast.model.weather
+package com.pannawat.weatherforecast.network.model.forecast
 
 
 import com.squareup.moshi.Json

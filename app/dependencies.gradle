@@ -30,6 +30,7 @@ dependencies {
 
     // ================  Kotlin ================= //
     implementation Deps.kotlin
+    kapt Deps.kotlinx
 
     // ================  RxJava ================= //
     implementation Deps.rxJava
@@ -65,8 +66,6 @@ dependencies {
     implementation Deps.daggerHilt
     implementation Deps.hiltCompiler
     implementation Deps.hiltAndroidCompiler
-    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.3.0")
-
 
     // ================ Test ================= //
     testImplementation(Deps.threetenabp)

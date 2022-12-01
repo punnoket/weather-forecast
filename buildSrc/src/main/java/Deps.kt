@@ -12,6 +12,7 @@ object Deps {
 
     const val rxRelay = "com.jakewharton.rxrelay3:rxrelay:${Versions.rxRelayVersion}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
+    const val kotlinx = "org.jetbrains.kotlinx:kotlinx-metadata-jvm:${Versions.kotlinxVersion}"
     const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttpVersion}"
     const val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpVersion}"
     const val multidex = "androidx.multidex:multidex:${Versions.multidexVersion}"

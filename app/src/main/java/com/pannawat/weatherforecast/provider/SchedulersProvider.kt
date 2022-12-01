@@ -1,4 +1,4 @@
-package com.pannawat.weatherforecast
+package com.pannawat.weatherforecast.provider
 
 import android.os.Looper
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers

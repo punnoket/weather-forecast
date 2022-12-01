@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".search.CitySearchFragment">
+    tools:context=".feature.search.CitySearchFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout"
@@ -42,32 +42,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/inputLayout" />
 
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/toggleButtonGroup"
+    <include
+        android:id="@+id/viewUnitButtonGroup"
+        layout="@layout/view_unit_button_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
         android:layout_marginEnd="@dimen/dimen_16dp"
-        app:checkedButton="@id/buttonCelsius"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSearch"
-        app:singleSelection="true">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonCelsius"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/celsius" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonFahrenheit"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fahrenheit" />
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>
+        app:layout_constraintTop_toBottomOf="@+id/inputLayout" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewCityName"
@@ -79,7 +62,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButtonGroup"
+        app:layout_constraintTop_toBottomOf="@+id/viewUnitButtonGroup"
         tools:text="London" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -141,7 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:constraint_referenced_ids="textViewCityName,textViewTemperature,textViewHumidityTitle,textViewHumidity,buttonSeeWholeDay,toggleButtonGroup"
+        app:constraint_referenced_ids="textViewCityName,textViewTemperature,textViewHumidityTitle,textViewHumidity,buttonSeeWholeDay,viewUnitButtonGroup"
         tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

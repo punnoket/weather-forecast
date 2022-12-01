@@ -1,6 +1,7 @@
 // Updated on 2020-08-04
 object Versions {
     const val kotlinVersion = "1.4.32"
+    const val kotlinxVersion = "0.3.0"
 
     // Libraries
     const val rxJavaVersion = "3.1.3"

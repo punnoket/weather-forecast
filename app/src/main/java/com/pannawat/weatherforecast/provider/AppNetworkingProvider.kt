@@ -1,6 +1,5 @@
-package com.pannawat.weatherforecast.network
+package com.pannawat.weatherforecast.provider
 
-import com.pannawat.weatherforecast.network.factory.ZonedDateTimeConverterFactory
 import com.pannawat.weatherforecast.network.interceptor.BasicAuthentication
 import com.pannawat.weatherforecast.network.service.WeatherService
 import com.serjltt.moshi.adapters.DeserializeOnly
@@ -21,7 +20,6 @@ class AppNetworkingProvider(
     val weatherService: WeatherService
 
     init {
-
         val moshiConvertFactory = MoshiConverterFactory.create(
             Moshi.Builder().add(DeserializeOnly.ADAPTER_FACTORY).add(SerializeOnly.ADAPTER_FACTORY)
                 .build()
@@ -29,7 +27,6 @@ class AppNetworkingProvider(
 
         okHttpClient.addInterceptor(BasicAuthentication())
         retrofit = Retrofit.Builder().baseUrl(endpoint).addConverterFactory(moshiConvertFactory)
-            .addConverterFactory(ZonedDateTimeConverterFactory())
             .addCallAdapterFactory(rxJava3CallAdapterFactory).client(okHttpClient.build()).build()
 
         weatherService = retrofit.create(WeatherService::class.java)
