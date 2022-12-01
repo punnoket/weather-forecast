@@ -1,0 +1,80 @@
+dependencies {
+
+    implementation Deps.multidex
+
+    // ================  Support ================= //
+    implementation Deps.androidSupportV4
+    implementation Deps.appCompat
+    implementation Deps.cardViewV7
+    implementation Deps.supportDesign
+
+    // ================  View ================= //
+    implementation Deps.constraintLayout
+
+    // ================ Networking ================= //
+    implementation Deps.retrofit
+    implementation Deps.retrofitConverterMoshi
+    implementation Deps.retrofitAdapterRxJava3
+    implementation Deps.moshi
+    implementation Deps.okio
+    implementation Deps.okHttp
+    implementation Deps.okHttpLogging
+    implementation Deps.retrofitMoshi
+    implementation Deps.retrofitRxJava
+    implementation Deps.moshiLazyAdapter
+    kapt Deps.moshiCodeGen
+
+    // annotation for faster development
+    implementation Deps.androidAnnotationsApi
+    kapt Deps.androidAnnotations
+
+    // ================  Kotlin ================= //
+    implementation Deps.kotlin
+
+    // ================  RxJava ================= //
+    implementation Deps.rxJava
+    implementation Deps.rxAndroid
+    implementation Deps.rxKotlin
+    implementation Deps.rxRelay
+    implementation Deps.rxBinding
+    implementation Deps.rxBindingRecyclerView
+    implementation Deps.rxBindingAppCompat
+
+    implementation Deps.glideOkhttp3Integration
+    implementation Deps.glideRecyclerviewIntegration
+
+    // ================ Epoxy ================= //
+    api Deps.epoxy
+    kapt Deps.epoxyProcessor
+    api Deps.shimmer
+
+    // ================ DateTime ================= //
+    implementation Deps.threeTenAbp
+
+    // =========== Android Architecture Component =========== //
+    implementation Deps.lifecycleCommon
+    implementation Deps.lifecycleLivedata
+    implementation Deps.lifecycleViewModel
+    implementation Deps.lifecycleViewModelSavedstate
+    implementation Deps.activity
+    implementation Deps.fragment
+    implementation Deps.eventEmitter
+
+    // =========== Hilt =========== //
+    implementation Deps.hiltLifecycle
+    implementation Deps.daggerHilt
+    implementation Deps.hiltCompiler
+    implementation Deps.hiltAndroidCompiler
+    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.3.0")
+
+
+    // ================ Test ================= //
+    testImplementation(Deps.threetenabp)
+
+    testImplementation(Deps.junit)
+    testImplementation(Deps.mockWebServer)
+    testImplementation(Deps.mockitoInline)
+    testImplementation(Deps.kotlinJUnit)
+    testImplementation(Deps.mockitoKotlin)
+
+}
