@@ -43,7 +43,8 @@ class CitySearchFragment : BaseFragment(R.layout.fragment_city_search) {
                             editText.text.toString(),
                             citySearchViewModel.unitLiveData.value ?: UnitEnum.CELSIUS
                         )
-                    })
+                    }
+                )
 
             subscriptions += buttonSeeWholeDay.clicks()
                 .subscribeBy(
@@ -56,7 +57,8 @@ class CitySearchFragment : BaseFragment(R.layout.fragment_city_search) {
                                     ?: UnitEnum.CELSIUS
                             )
                         )
-                    })
+                    }
+                )
 
             with(viewUnitButtonGroup) {
                 buttonCelsius.isChecked = true
@@ -92,7 +94,6 @@ class CitySearchFragment : BaseFragment(R.layout.fragment_city_search) {
                 textViewTemperature.text =
                     getString(citySearchViewState.unit.title, main.temp)
                 textViewHumidity.text = getString(R.string.humidityValue, main.humidity.toString())
-
             } ?: run {
                 groupContent.isVisible = false
             }
@@ -103,5 +104,4 @@ class CitySearchFragment : BaseFragment(R.layout.fragment_city_search) {
         get() = super.viewModelList.toMutableList().apply {
             add(citySearchViewModel)
         }
-
 }

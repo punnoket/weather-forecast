@@ -27,7 +27,6 @@ abstract class ForecastModel : EpoxyModelWithHolder<ForecastModel.Holder>() {
                 )
                 textViewTemperature.text =
                     textViewTemperature.context.getString(unit.title, main.temp)
-
             }
         }
     }

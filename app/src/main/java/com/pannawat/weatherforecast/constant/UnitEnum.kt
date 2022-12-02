@@ -2,7 +2,6 @@ package com.pannawat.weatherforecast.constant
 
 import com.pannawat.weatherforecast.R
 
-
 enum class UnitEnum(val title: Int, val value: String) {
 
     CELSIUS(

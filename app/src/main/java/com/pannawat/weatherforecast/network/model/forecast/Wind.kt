@@ -1,6 +1,5 @@
 package com.pannawat.weatherforecast.network.model.forecast
 
-
 import android.os.Parcelable
 import androidx.annotation.Keep
 import com.squareup.moshi.Json

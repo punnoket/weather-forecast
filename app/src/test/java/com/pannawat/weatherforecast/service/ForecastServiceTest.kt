@@ -64,5 +64,4 @@ class ForecastServiceTest {
     fun stopService() {
         mockWebServer.shutdown()
     }
-
 }

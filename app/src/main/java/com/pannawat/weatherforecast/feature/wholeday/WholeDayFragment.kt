@@ -19,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import javax.inject.Inject
 
-
 @AndroidEntryPoint
 class WholeDayFragment : BaseFragment(R.layout.fragment_whole_day) {
 
@@ -61,7 +60,6 @@ class WholeDayFragment : BaseFragment(R.layout.fragment_whole_day) {
                 wholeDayController.setData(state)
             }
 
-
             with(viewUnitButtonGroup) {
                 buttonCelsius.clicks()
                     .subscribeBy(
@@ -99,5 +97,4 @@ class WholeDayFragment : BaseFragment(R.layout.fragment_whole_day) {
         get() = super.viewModelList.toMutableList().apply {
             add(wholeDayViewModel)
         }
-
 }

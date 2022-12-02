@@ -21,5 +21,4 @@ class MainActivity : AppCompatActivity() {
         return binding.navHostFragmentActivityMain.findNavController()
             .navigateUp() || super.onSupportNavigateUp()
     }
-
 }

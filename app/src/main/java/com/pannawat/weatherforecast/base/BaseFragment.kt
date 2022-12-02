@@ -93,7 +93,6 @@ abstract class BaseFragment(@LayoutRes contentLayoutId: Int) :
         try {
             dialog.show()
         } catch (_: WindowManager.BadTokenException) {
-
         }
     }
 

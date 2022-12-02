@@ -43,7 +43,6 @@ class CitySearchViewModel @Inject constructor(
     private val weatherResponseLiveData by lazy { MutableLiveData<WeatherResponse>() }
     val unitLiveData by lazy { MutableLiveData<UnitEnum>() }
 
-
     fun searchWeather(
         cityName: String,
         unitEnum: UnitEnum
