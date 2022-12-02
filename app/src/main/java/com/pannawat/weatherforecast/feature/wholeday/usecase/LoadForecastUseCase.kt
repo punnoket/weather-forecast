@@ -13,7 +13,11 @@ class LoadForecastUseCase @Inject constructor(
         cityName: String, units: String
     ): Single<ForecastResponse> {
         return forecastRepository.getForecast(
-            mapOf("q" to cityName, "units" to units, "cnt" to "3")
+            mapOf(
+                "q" to cityName,
+                "units" to units,
+                "cnt" to "3"
+            )
         )
     }
 }

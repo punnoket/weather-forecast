@@ -23,13 +23,19 @@ class AppNetworkingProvider(
 
     init {
         val moshiConvertFactory = MoshiConverterFactory.create(
-            Moshi.Builder().add(DeserializeOnly.ADAPTER_FACTORY).add(SerializeOnly.ADAPTER_FACTORY)
+            Moshi.Builder()
+                .add(DeserializeOnly.ADAPTER_FACTORY)
+                .add(SerializeOnly.ADAPTER_FACTORY)
                 .build()
         )
 
         okHttpClient.addInterceptor(BasicAuthentication())
-        retrofit = Retrofit.Builder().baseUrl(endpoint).addConverterFactory(moshiConvertFactory)
-            .addCallAdapterFactory(rxJava3CallAdapterFactory).client(okHttpClient.build()).build()
+        retrofit = Retrofit.Builder()
+            .baseUrl(endpoint)
+            .addConverterFactory(moshiConvertFactory)
+            .addCallAdapterFactory(rxJava3CallAdapterFactory)
+            .client(okHttpClient.build())
+            .build()
 
         weatherService = retrofit.create(WeatherService::class.java)
         forecastService = retrofit.create(ForecastService::class.java)

@@ -13,7 +13,10 @@ class SearchWeatherUseCase @Inject constructor(
         cityName: String, units: String
     ): Single<WeatherResponse> {
         return weatherRepository.getWeather(
-            mapOf("q" to cityName, "units" to units)
+            mapOf(
+                "q" to cityName,
+                "units" to units
+            )
         )
     }
 }
