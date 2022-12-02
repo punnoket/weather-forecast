@@ -14,7 +14,7 @@ import retrofit2.HttpException
 data class ErrorResponse(
     @Json(name = "message")
     val message: String = "",
-    @Json(name = "code")
+    @Json(name = "cod")
     val code: String = ""
 ) : Parcelable
 

@@ -58,16 +58,20 @@ abstract class BaseFragment(@LayoutRes contentLayoutId: Int) :
                 is BaseViewModel -> {
                     viewModel.loadingLiveData
                         .observe(viewLifecycleOwner) { isLoading ->
-                            if (isLoading) {
-                                showProgressDialog()
-                            } else {
-                                hideProgressDialog()
+                            when {
+                                isLoading -> {
+                                    showProgressDialog()
+                                }
+                                else -> {
+                                    hideProgressDialog()
+                                }
                             }
                         }
 
                     viewModel.errorMessageLiveData
                         .observe(viewLifecycleOwner) { throwable ->
-                            showDialog(message = throwable.getErrorResponse().message)
+                            val errorResponse = throwable.getErrorResponse()
+                            showDialog(message = "${errorResponse.message} (${errorResponse.code})")
                         }
                 }
             }
@@ -108,12 +112,5 @@ abstract class BaseFragment(@LayoutRes contentLayoutId: Int) :
                 dialogInterface.dismiss()
             }
             .show()
-    }
-
-    protected fun hideSoftKeyboard() {
-        activity.currentFocus?.let {
-            val imm = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(it.windowToken, 0)
-        }
     }
 }

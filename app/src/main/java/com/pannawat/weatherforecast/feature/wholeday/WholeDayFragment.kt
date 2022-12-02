@@ -8,6 +8,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.jakewharton.rxbinding4.view.clicks
 import com.pannawat.weatherforecast.R
 import com.pannawat.weatherforecast.base.BaseFragment
 import com.pannawat.weatherforecast.constant.UnitEnum
@@ -15,6 +16,7 @@ import com.pannawat.weatherforecast.databinding.FragmentWholeDayBinding
 import com.pannawat.weatherforecast.extension.viewBinding
 import com.pannawat.weatherforecast.feature.wholeday.controller.WholeDayController
 import dagger.hilt.android.AndroidEntryPoint
+import io.reactivex.rxjava3.kotlin.subscribeBy
 import javax.inject.Inject
 
 
@@ -61,18 +63,25 @@ class WholeDayFragment : BaseFragment(R.layout.fragment_whole_day) {
 
 
             with(viewUnitButtonGroup) {
-                toggleButtonGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
-                    if (isChecked) {
-                        when (checkedId) {
-                            R.id.buttonCelsius -> {
-                                wholeDayViewModel.searchWeather(UnitEnum.CELSIUS)
-                            }
-                            R.id.buttonFahrenheit -> {
-                                wholeDayViewModel.searchWeather(UnitEnum.FAHRENHEIT)
-                            }
+                buttonCelsius.clicks()
+                    .subscribeBy(
+                        onError = {},
+                        onNext = {
+                            wholeDayViewModel.searchWeather(
+                                UnitEnum.CELSIUS
+                            )
                         }
-                    }
-                }
+                    )
+
+                buttonFahrenheit.clicks()
+                    .subscribeBy(
+                        onError = {},
+                        onNext = {
+                            wholeDayViewModel.searchWeather(
+                                UnitEnum.FAHRENHEIT
+                            )
+                        }
+                    )
 
                 when (args.unit) {
                     UnitEnum.CELSIUS -> {

@@ -26,7 +26,7 @@ abstract class ForecastModel : EpoxyModelWithHolder<ForecastModel.Holder>() {
                     R.string.humidityValue, main.humidity.toString()
                 )
                 textViewTemperature.text =
-                    textViewTemperature.context.getString(unit.title, main.temp.toInt())
+                    textViewTemperature.context.getString(unit.title, main.temp)
 
             }
         }

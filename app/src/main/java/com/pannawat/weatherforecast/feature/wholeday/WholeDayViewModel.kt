@@ -52,8 +52,8 @@ class WholeDayViewModel @Inject constructor(
         disposables += loadForecastUseCase.execute(
             args.cityName,
             unitEnum.value
-        ).subscribeOn(schedulersProvider.io)
-            .observeOn(schedulersProvider.ui)
+        ).subscribeOn(schedulersProvider.io())
+            .observeOn(schedulersProvider.ui())
             .doOnSubscribe {
                 showLoading()
             }.doOnEvent { _, _ ->

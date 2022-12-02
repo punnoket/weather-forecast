@@ -72,6 +72,7 @@ object Deps {
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockitoVersion}"
     const val kotlinJUnit = "org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlinVersion}"
     const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockitoKotlinVersion}"
+    const val androidxTesting = "androidx.arch.core:core-testing:${Versions.androidxTesting}"
 
     const val hiltLifecycle =
         "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltLifecycleVersion}"

@@ -39,6 +39,7 @@ object Versions {
     const val jUnitVersion = "4.13.1"
     const val mockitoVersion = "3.7.7"
     const val mockitoKotlinVersion = "3.2.0"
+    const val androidxTesting = "2.1.0"
 
     const val hiltLifecycleVersion = "1.0.0-alpha03"
     const val daggerHiltVersion = "2.37"

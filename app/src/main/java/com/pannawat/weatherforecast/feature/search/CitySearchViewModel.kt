@@ -52,8 +52,8 @@ class CitySearchViewModel @Inject constructor(
             cityName,
             unitEnum.value
         )
-            .subscribeOn(schedulersProvider.io)
-            .observeOn(schedulersProvider.ui)
+            .subscribeOn(schedulersProvider.io())
+            .observeOn(schedulersProvider.ui())
             .doOnSubscribe {
                 showLoading()
             }

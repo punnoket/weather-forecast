@@ -32,43 +32,47 @@ class CitySearchFragment : BaseFragment(R.layout.fragment_city_search) {
     private fun initView() {
         with(binding) {
             citySearchViewModel.citySearchViewState.observe(viewLifecycleOwner) { state ->
-                    setContent(state)
-                }
+                setContent(state)
+            }
 
             subscriptions += buttonSearch.clicks().subscribeBy(onError = {}, onNext = {
-                    citySearchViewModel.searchWeather(
-                        editText.text.toString(),
-                        citySearchViewModel.unitLiveData.value ?: UnitEnum.CELSIUS
-                    )
-                })
+                citySearchViewModel.searchWeather(
+                    editText.text.toString(),
+                    citySearchViewModel.unitLiveData.value ?: UnitEnum.CELSIUS
+                )
+            })
 
             subscriptions += buttonSeeWholeDay.clicks().subscribeBy(onError = {}, onNext = {
-                    findNavController().navigate(
-                        CitySearchFragmentDirections.actionToWholeDayFragment(
-                            editText.text.toString(),
-                            citySearchViewModel.citySearchViewState.value?.unit ?: UnitEnum.CELSIUS
-                        )
+                findNavController().navigate(
+                    CitySearchFragmentDirections.actionToWholeDayFragment(
+                        editText.text.toString(),
+                        citySearchViewModel.citySearchViewState.value?.unit ?: UnitEnum.CELSIUS
                     )
-                })
+                )
+            })
 
             with(viewUnitButtonGroup) {
                 buttonCelsius.isChecked = true
-                toggleButtonGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
-                    if (isChecked) {
-                        when (checkedId) {
-                            R.id.buttonCelsius -> {
-                                citySearchViewModel.searchWeather(
-                                    editText.text.toString(), UnitEnum.CELSIUS
-                                )
-                            }
-                            R.id.buttonFahrenheit -> {
-                                citySearchViewModel.searchWeather(
-                                    editText.text.toString(), UnitEnum.FAHRENHEIT
-                                )
-                            }
+
+                buttonCelsius.clicks()
+                    .subscribeBy(
+                        onError = {},
+                        onNext = {
+                            citySearchViewModel.searchWeather(
+                                editText.text.toString(), UnitEnum.CELSIUS
+                            )
                         }
-                    }
-                }
+                    )
+
+                buttonFahrenheit.clicks()
+                    .subscribeBy(
+                        onError = {},
+                        onNext = {
+                            citySearchViewModel.searchWeather(
+                                editText.text.toString(), UnitEnum.FAHRENHEIT
+                            )
+                        }
+                    )
             }
         }
     }
@@ -79,7 +83,7 @@ class CitySearchFragment : BaseFragment(R.layout.fragment_city_search) {
                 groupContent.isVisible = true
                 textViewCityName.text = name
                 textViewTemperature.text =
-                    getString(citySearchViewState.unit.title, main.temp.toInt())
+                    getString(citySearchViewState.unit.title, main.temp)
                 textViewHumidity.text = getString(R.string.humidityValue, main.humidity.toString())
 
             } ?: run {

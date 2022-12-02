@@ -75,5 +75,5 @@ dependencies {
     testImplementation(Deps.mockitoInline)
     testImplementation(Deps.kotlinJUnit)
     testImplementation(Deps.mockitoKotlin)
-
+    testImplementation(Deps.androidxTesting)
 }
