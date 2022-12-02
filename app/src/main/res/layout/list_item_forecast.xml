@@ -61,8 +61,8 @@
         android:textColor="@color/text"
         android:textSize="@dimen/dimen_28sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="4 c" />
 

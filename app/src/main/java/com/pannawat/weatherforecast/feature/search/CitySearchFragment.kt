@@ -35,21 +35,28 @@ class CitySearchFragment : BaseFragment(R.layout.fragment_city_search) {
                 setContent(state)
             }
 
-            subscriptions += buttonSearch.clicks().subscribeBy(onError = {}, onNext = {
-                citySearchViewModel.searchWeather(
-                    editText.text.toString(),
-                    citySearchViewModel.unitLiveData.value ?: UnitEnum.CELSIUS
-                )
-            })
+            subscriptions += buttonSearch.clicks()
+                .subscribeBy(
+                    onError = {},
+                    onNext = {
+                        citySearchViewModel.searchWeather(
+                            editText.text.toString(),
+                            citySearchViewModel.unitLiveData.value ?: UnitEnum.CELSIUS
+                        )
+                    })
 
-            subscriptions += buttonSeeWholeDay.clicks().subscribeBy(onError = {}, onNext = {
-                findNavController().navigate(
-                    CitySearchFragmentDirections.actionToWholeDayFragment(
-                        editText.text.toString(),
-                        citySearchViewModel.citySearchViewState.value?.unit ?: UnitEnum.CELSIUS
-                    )
-                )
-            })
+            subscriptions += buttonSeeWholeDay.clicks()
+                .subscribeBy(
+                    onError = {},
+                    onNext = {
+                        findNavController().navigate(
+                            CitySearchFragmentDirections.actionToWholeDayFragment(
+                                editText.text.toString(),
+                                citySearchViewModel.citySearchViewState.value?.unit
+                                    ?: UnitEnum.CELSIUS
+                            )
+                        )
+                    })
 
             with(viewUnitButtonGroup) {
                 buttonCelsius.isChecked = true

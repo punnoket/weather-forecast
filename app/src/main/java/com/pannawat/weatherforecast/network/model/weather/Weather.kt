@@ -1,11 +1,11 @@
 package com.pannawat.weatherforecast.network.model.weather
 
 
+import android.os.Parcelable
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import androidx.annotation.Keep
 import kotlinx.parcelize.Parcelize
-import android.os.Parcelable
 
 @Keep
 @JsonClass(generateAdapter = true)

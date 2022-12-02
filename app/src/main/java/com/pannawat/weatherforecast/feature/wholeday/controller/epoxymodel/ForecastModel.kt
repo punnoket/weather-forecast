@@ -32,9 +32,9 @@ abstract class ForecastModel : EpoxyModelWithHolder<ForecastModel.Holder>() {
         }
     }
 
-	class Holder : KotlinEpoxyHolder() {
-		val textViewDate by bind<MaterialTextView>(R.id.textViewDate)
-		val textViewHumidity by bind<MaterialTextView>(R.id.textViewHumidity)
-		val textViewTemperature by bind<MaterialTextView>(R.id.textViewTemperature)
-	}
+    class Holder : KotlinEpoxyHolder() {
+        val textViewDate by bind<MaterialTextView>(R.id.textViewDate)
+        val textViewHumidity by bind<MaterialTextView>(R.id.textViewHumidity)
+        val textViewTemperature by bind<MaterialTextView>(R.id.textViewTemperature)
+    }
 }

@@ -5,7 +5,6 @@ import androidx.lifecycle.Observer
 import com.pannawat.weatherforecast.network.model.forecast.ForecastResponse
 import com.pannawat.weatherforecast.network.model.weather.WeatherResponse
 import com.squareup.moshi.Moshi
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
@@ -14,10 +13,6 @@ import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okio.buffer
 import okio.source
-import org.mockito.Mockito
-import org.mockito.stubbing.OngoingStubbing
-import org.threeten.bp.zone.TzdbZoneRulesProvider
-import org.threeten.bp.zone.ZoneRulesProvider
 import retrofit2.HttpException
 import retrofit2.Response
 import java.util.concurrent.CountDownLatch

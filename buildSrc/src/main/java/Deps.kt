@@ -4,7 +4,8 @@ object Deps {
     const val rxKotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.rxKotlinVersion}"
 
     const val rxBinding = "com.jakewharton.rxbinding4:rxbinding:${Versions.rxBindingVersion}"
-    const val rxBindingCore = "com.jakewharton.rxbinding4:rxbinding-core:${Versions.rxBindingVersion}"
+    const val rxBindingCore =
+        "com.jakewharton.rxbinding4:rxbinding-core:${Versions.rxBindingVersion}"
     const val rxBindingRecyclerView =
         "com.jakewharton.rxbinding4:rxbinding-recyclerview:${Versions.rxBindingVersion}"
     const val rxBindingAppCompat =

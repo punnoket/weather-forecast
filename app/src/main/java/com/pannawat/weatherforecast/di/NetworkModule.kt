@@ -1,9 +1,9 @@
 package com.pannawat.weatherforecast.di
 
 import com.pannawat.weatherforecast.BuildConfig
-import com.pannawat.weatherforecast.provider.SchedulersProvider
 import com.pannawat.weatherforecast.provider.AppNetworkingProvider
 import com.pannawat.weatherforecast.provider.AppSchedulersProvider
+import com.pannawat.weatherforecast.provider.SchedulersProvider
 import com.serjltt.moshi.adapters.DeserializeOnly
 import com.serjltt.moshi.adapters.SerializeOnly
 import com.squareup.moshi.Moshi
@@ -12,7 +12,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 
 @Module

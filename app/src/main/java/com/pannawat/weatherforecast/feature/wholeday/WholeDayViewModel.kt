@@ -2,12 +2,12 @@ package com.pannawat.weatherforecast.feature.wholeday
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.pannawat.weatherforecast.provider.SchedulersProvider
 import com.pannawat.weatherforecast.base.BaseViewModel
 import com.pannawat.weatherforecast.constant.UnitEnum
 import com.pannawat.weatherforecast.feature.wholeday.model.WholeDayViewState
 import com.pannawat.weatherforecast.feature.wholeday.usecase.LoadForecastUseCase
 import com.pannawat.weatherforecast.network.model.forecast.ForecastResponse
+import com.pannawat.weatherforecast.provider.SchedulersProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.kotlin.plusAssign
 import io.reactivex.rxjava3.kotlin.subscribeBy

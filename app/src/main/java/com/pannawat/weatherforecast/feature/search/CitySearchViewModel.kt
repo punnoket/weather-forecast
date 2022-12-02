@@ -2,12 +2,12 @@ package com.pannawat.weatherforecast.feature.search
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.pannawat.weatherforecast.provider.SchedulersProvider
 import com.pannawat.weatherforecast.base.BaseViewModel
 import com.pannawat.weatherforecast.constant.UnitEnum
 import com.pannawat.weatherforecast.feature.search.model.CitySearchViewState
 import com.pannawat.weatherforecast.feature.search.usecase.SearchWeatherUseCase
 import com.pannawat.weatherforecast.network.model.weather.WeatherResponse
+import com.pannawat.weatherforecast.provider.SchedulersProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.kotlin.plusAssign
 import io.reactivex.rxjava3.kotlin.subscribeBy

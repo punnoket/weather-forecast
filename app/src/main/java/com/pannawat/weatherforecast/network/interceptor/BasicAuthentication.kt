@@ -11,7 +11,8 @@ class BasicAuthentication : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         var request: Request = chain.request()
-        val url: HttpUrl = request.url.newBuilder().addQueryParameter("appid", BuildConfig.APP_ID).build()
+        val url: HttpUrl =
+            request.url.newBuilder().addQueryParameter("appid", BuildConfig.APP_ID).build()
         request = request.newBuilder().url(url).build()
         return chain.proceed(request)
     }

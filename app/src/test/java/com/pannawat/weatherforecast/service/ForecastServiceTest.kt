@@ -29,11 +29,11 @@ class ForecastServiceTest {
     fun setup() {
         mockWebServer = MockWebServer()
         forecastService = Retrofit.Builder().baseUrl(mockWebServer.url("/")).addConverterFactory(
-                MoshiConverterFactory.create(
-                    Moshi.Builder().add(DeserializeOnly.ADAPTER_FACTORY)
-                        .add(SerializeOnly.ADAPTER_FACTORY).build()
-                )
-            ).client(okHttpClient().addInterceptor(BasicAuthentication()).build())
+            MoshiConverterFactory.create(
+                Moshi.Builder().add(DeserializeOnly.ADAPTER_FACTORY)
+                    .add(SerializeOnly.ADAPTER_FACTORY).build()
+            )
+        ).client(okHttpClient().addInterceptor(BasicAuthentication()).build())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.createSynchronous()).build()
             .create(ForecastService::class.java)
     }
